@@ -28,6 +28,19 @@ void towerOfHanoi(int numDisk, char startPeg, char sparePeg , char endPeg)
 		towerOfHanoi(numDisk - 1, sparePeg, startPeg, endPeg);
 	} 
 }  
+
+
+int factorialR(int num)
+{
+	if(num > 1)
+	{
+		return num * factorialR(num - 1); // ex: 4 * 3 * 2 * 1
+	}
+  else
+	{
+		return 1;
+	}      
+}
   
 
 int main()  
@@ -38,6 +51,15 @@ int main()
   numDisk = validateInt(numDisk); 
 
   towerOfHanoi(numDisk, 'A', 'B', 'C'); // name of pegs
+
+
+	// Factorial
+
+	int num = 0;
+
+	cout << "\nEnter a number: ";
+	num = validateInt(num);
+	cout << "Factorial of " << num << " = " << factorialR(num);
 
   return 0;  
 }  
